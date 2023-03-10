@@ -30,9 +30,10 @@ Vagrant.configure("2") do |config|
     kali.vm.network "forwarded_port", guest: 80, host: 8800
     kali.vm.network "forwarded_port", guest: 3000, host: 3333
     
-    kali.vm.provision :shell, path: "provision-go.sh"
+    kali.vm.provision :shell, path: "provision.sh"
     kali.vm.provision :shell, path: "provision-docker.sh"
-
+    kali.vm.provision :shell, path: "provision-go.sh"
+    
 
     config.vm.provision "file", source: "install/code_1.74.2-1671533413_amd64.deb", destination: "~/code_1.74.2-1671533413_amd64.deb"
 
