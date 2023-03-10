@@ -1,0 +1,15 @@
+version: "3"
+services:
+  db:
+    image: postgres:14-alpine
+    container_name: "my_postgres"
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_DB: db_dev # name of DB
+      POSTGRES_PASSWORD: SecretDB123
+    volumes: 
+     - app_data:/var/lib/postgresql/data
+
+volumes: 
+   app_data:
